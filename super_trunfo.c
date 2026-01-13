@@ -1,13 +1,17 @@
 #include <stdio.h>
 
+// Declarando as Variáveis
 typedef struct {
     char estado[3];          // Ex: A a H
-    char codigo[10];          // Ex: A01, B02
+    char codigo[10];         // Ex: A01, B02
     char cidade[50];         // Nome da Cidade
     int populacao;           // População
     float area;              // Área
     float pib;               // PIB
     int pontosTuristicos;    // Número de pontos turísticos
+    float densidade;         // Densidade Populacional
+    float pibPerCapita;      // PIB per Capita
+   
 } Carta;
 
 int main() {
@@ -63,6 +67,13 @@ int main() {
     printf("Digite o número de pontos turísticos: ");
     scanf(" %d", &carta2.pontosTuristicos);
 
+    // Cáculos de Densidade Populacional e PIB per Capita
+    carta1.densidade = (float)carta1.populacao / carta1.area;
+    carta1.pibPerCapita = (carta1.pib * 1000000.0) / carta1.populacao;
+
+    carta2.densidade = (float)carta2.populacao / carta2.area;
+    carta2.pibPerCapita = (carta2.pib * 1000000.0) / carta2.populacao;
+    
     // Exibindo os dados
     printf("\n=== Cartas Cadastradas ===\n\n");
 
@@ -74,6 +85,8 @@ int main() {
     printf("Area: %.2f Km²\n", carta1.area);
     printf("PIB: %.2f bilhões de reais\n", carta1.pib);
     printf("Pontos Turisticos: %d\n", carta1.pontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", carta1.densidade);
+    printf("PIB Per Capita: %.2f milhões de reais\n", carta1.pibPerCapita);
 
     printf("\nCarta 2\n");
     printf("Estado: %s\n", carta2.estado);
@@ -83,6 +96,8 @@ int main() {
     printf("Area: %.2f Km²\n", carta2.area);
     printf("PIB: %.2f bilhões de reais\n", carta2.pib);
     printf("Pontos Turisticos: %d\n", carta2.pontosTuristicos);
+    printf("Densidade Populacional: %.2f hab/km²\n", carta2.densidade);
+    printf("PIB Per Capita: %.2f milhões de reais\n", carta2.pibPerCapita);
 
     return 0;
 }
