@@ -110,7 +110,7 @@ int main() {
 
     printf("\n=== Comparação de Cartas ===\n\n");
 
-    // Lógica: (Atributo1 > Atributo2) resulta em 1 (Verdadeiro) ou 0 (Falso)
+    // (Atributo1 > Atributo2) resulta em 1 (Verdadeiro) ou 0 (Falso)
     printf("População: Carta %d venceu (%d)\n", (carta1.populacao > carta2.populacao ? 1 : 2), carta1.populacao > carta2.populacao);
     printf("Área: Carta %d venceu (%d)\n", (carta1.area > carta2.area ? 1 : 2), carta1.area > carta2.area);
     printf("PIB: Carta %d venceu (%d)\n", (carta1.pib > carta2.pib ? 1 : 2), carta1.pib > carta2.pib);
